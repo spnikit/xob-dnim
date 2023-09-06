@@ -1,9 +1,10 @@
-import {Input, Layout, Space} from 'antd';
+import {Input} from 'antd';
 import {useTodoList} from "./hooks/useTodoList";
 import {useTodoFilter} from "./hooks/useTodoFilter";
 import {filterOptions, initialState} from "./components/constants";
 import {TodoList} from "./components/TodoList";
 import {TodoControls} from "./components/TodoControls";
+import {TodoLayout} from "./components/TodoLayout";
 
 
 function App() {
@@ -18,22 +19,16 @@ function App() {
 
 
     return (
-        <>
-            <Layout>
-                <Layout.Content style={{margin: '0 auto', padding: '10px'}}>
-                    <Space direction="vertical" style={{marginTop: '20px'}} size="middle">
-                        <Input placeholder="What needs to be done?" onPressEnter={handleInputEnter}
-                               allowClear={true}/>
-                        <TodoList list={list} onItemClick={handleTodoClick}/>
-                        <TodoControls
-                            filterOption={filterOption} itemsLeft={itemsLeft}
-                            onFilterOptionChange={handleFilterOptionChange}
-                            onClearCompleted={handleClearCompleted}
-                        />
-                    </Space>
-                </Layout.Content>
-            </Layout>
-        </>
+        <TodoLayout>
+            <Input placeholder="What needs to be done?" onPressEnter={handleInputEnter}
+                   allowClear={true}/>
+            <TodoList list={list} onItemClick={handleTodoClick}/>
+            <TodoControls
+                filterOption={filterOption} itemsLeft={itemsLeft}
+                onFilterOptionChange={handleFilterOptionChange}
+                onClearCompleted={handleClearCompleted}
+            />
+        </TodoLayout>
     )
 }
 
@@ -41,11 +36,9 @@ export default App
 
 
 /*
-* layout
-* input
-* list -> карточка todo
-* filter panel with buttons
-* add clear completed logic
-* move all list operations to separate hook
-* min height 170px
+* add header
+* make clear button disabled if no completed items
+* try to make input clear after enter
+* maybe add button to input
+* add min height
 * */

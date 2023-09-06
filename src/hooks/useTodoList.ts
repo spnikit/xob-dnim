@@ -11,7 +11,7 @@ export function useTodoList(initialState: Todo[], filterOption: FilterOptions) {
     const handleInputEnter = (e: KeyboardEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
 
-        if (target.value) {
+        if (target.value.trim()) {
             setTodoList(prev => [
                     {id: uniqueId(), content: target.value, status: 'active'},
                     ...prev
