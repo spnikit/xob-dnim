@@ -12,8 +12,12 @@ export function useTodoList(initialState: Todo[], filterOption: FilterOptions) {
     const target = e.target as HTMLInputElement;
 
     if (target.value.trim()) {
-      setTodoList((prev) => [{ id: uniqueId(), content: target.value, status: 'active' }, ...prev]);
+      addItemToList(target.value);
     }
+  };
+
+  const addItemToList = (value: string) => {
+    setTodoList((prev) => [{ id: uniqueId(), content: value, status: 'active' }, ...prev]);
   };
 
   const handleTodoClick = (item: Todo) => (e: CheckboxChangeEvent) => {
@@ -55,5 +59,6 @@ export function useTodoList(initialState: Todo[], filterOption: FilterOptions) {
     handleTodoClick,
     list: filteredList,
     itemsLeft,
+    addItemToList,
   };
 }
