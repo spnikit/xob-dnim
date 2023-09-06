@@ -21,7 +21,7 @@ export const TodoInput = ({ handleInputEnter, handleAddButton }: TodoInputProps)
       suffix={
         <Button
           onClick={() => {
-            inputValue && handleAddButton(inputValue);
+            inputValue?.trim() && handleAddButton(inputValue);
             resetValue();
           }}
           type="text"
