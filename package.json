@@ -2,13 +2,16 @@
   "name": "xob-dnim",
   "private": true,
   "version": "0.0.0",
+  "homepage": "http://spnikit.github.io/xob-dnim",
   "type": "module",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "predeploy": "tsc vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/jest": "^29.5.4",
