@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "predeploy": "tsc vite build",
+    "predeploy": "tsc && vite build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
