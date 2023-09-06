@@ -5,7 +5,7 @@ import {filterOptions, initialState} from "./components/constants";
 import {TodoList} from "./components/TodoList";
 import {TodoControls} from "./components/TodoControls";
 import {TodoLayout} from "./components/TodoLayout";
-
+import './App.css';
 
 function App() {
     const {filterOption, handleFilterOptionChange} = useTodoFilter(filterOptions[0]);
@@ -41,4 +41,5 @@ export default App
 * try to make input clear after enter
 * maybe add button to input
 * add min height
+* add strike strough to completed
 * */
