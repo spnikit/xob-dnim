@@ -32,6 +32,4 @@ export default App;
 
 /*
  * make clear button disabled if no completed items
- * add min height
- * add strike strough to completed
  * */
